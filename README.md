@@ -1,15 +1,30 @@
-# Upravljanje zaposlenima
+# Employee Management (React + Fluent UI v9)
+
+A CRUD app for managing employees, built as an independent task during my frontend internship. It uses React 19, TypeScript, Vite and Microsoft Fluent UI v9, and keeps the data in the browser's localStorage (there is no backend).
+
+- Create, edit and delete employees (first name, last name, email, department, salary, hire date)
+- Search by first name, last name or email, filter by department, sort by any column
+- Form validation: required fields, email format, salary greater than 0
+- Light and dark theme
+
+Run it with Node.js 20.19+: `npm install`, then `npm run dev` (http://localhost:5173).
+
+The rest of this README is in Serbian.
+
+---
+
+## Upravljanje zaposlenima (opis na srpskom)
 
 CRUD aplikacija razvijena kao zadatak za samostalan rad u sklopu prakse iz sektora za razvoj korisničkog interfejsa.
 
-## Tehnologije
+### Tehnologije
 
 - **React 19** + **TypeScript**
 - **Vite** kao build alat i dev server
 - **Fluent UI v9** (`@fluentui/react-components`) — Microsoft-ov dizajn sistem
 - **localStorage** za perzistenciju (bez backend-a)
 
-## Funkcionalnosti
+### Funkcionalnosti
 
 - **C**reate / **R**ead / **U**pdate / **D**elete zaposlenih
 - Pretraga po imenu, prezimenu ili e-mail adresi
@@ -19,9 +34,9 @@ CRUD aplikacija razvijena kao zadatak za samostalan rad u sklopu prakse iz sekto
 - Light / Dark tema
 - Podaci preživljavaju refresh stranice (localStorage)
 
-## Pokretanje
+### Pokretanje
 
-Potreban je Node.js 18+.
+Potreban je Node.js 20.19+ (zahtev Vite-a).
 
 ```bash
 npm install
@@ -37,7 +52,7 @@ npm run build
 npm run preview
 ```
 
-## Struktura projekta
+### Struktura projekta
 
 ```
 src/
@@ -52,7 +67,7 @@ src/
     └── DeleteDialog.tsx           # Potvrda brisanja
 ```
 
-## Model podataka
+### Model podataka
 
 ```ts
 interface Employee {
@@ -66,7 +81,7 @@ interface Employee {
 }
 ```
 
-## Napomene
+### Napomene
 
 - Tip `EmployeeDraft = Omit<Employee, "id">` razdvaja podatke koje korisnik unosi od podataka koje sistem generiše.
 - `useMemo` se koristi za filtriranu i sortiranu listu kako bi se izbegao recompute na svaki render.
